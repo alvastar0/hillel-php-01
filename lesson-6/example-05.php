@@ -8,7 +8,10 @@
  */
 
 $array = [
-    11, 22, 33, 44
+    11,
+    22,
+    33,
+    44,
 ];
 
 foreach ($array as $index => $value) {

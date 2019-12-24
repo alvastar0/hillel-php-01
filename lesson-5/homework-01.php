@@ -6,7 +6,7 @@
 //
 // Вместо этого определите константы для тех фиксированных
 // значений и используйте их там, где хотели использовать литерал.
-const ROLE_ADMIN = 'admin';
+const ROLE_ADMIN  = 'admin';
 const ROLE_EDITOR = 'editor';
 
 // Массив доступных ролей.
@@ -15,19 +15,19 @@ $roles = [
     ROLE_EDITOR,
 ];
 
-const INCLUDE_ARTICLES = 'articles';
-const INCLUDE_COMMENTS = 'comments';
+const INCLUDE_ARTICLES   = 'articles';
+const INCLUDE_COMMENTS   = 'comments';
 const INCLUDE_STATISTICS = 'statistics';
 
 // Массив доступных включений для каждой из роли
 $includePolicies = [
-    ROLE_ADMIN => [INCLUDE_ARTICLES, INCLUDE_COMMENTS, INCLUDE_STATISTICS],
+    ROLE_ADMIN  => [INCLUDE_ARTICLES, INCLUDE_COMMENTS, INCLUDE_STATISTICS],
     ROLE_EDITOR => [INCLUDE_ARTICLES, INCLUDE_COMMENTS],
 ];
 
 // Получаем данные из $_GET и сохраняем в массив $request
 $request = [
-    'role' => $_GET['role'] ?? '',
+    'role'    => $_GET['role'] ?? '',
     'include' => $_GET['include'] ?? '',
 ];
 

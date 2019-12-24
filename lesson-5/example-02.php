@@ -21,9 +21,9 @@ var_dump($indexedArray);
 //
 // Ключи назначаются «вручную» и могут быть как числами, так и строками.
 $assocArray = [
-    'name' => 'John Doe',
-    'age' => 18,
-    'telephone' => '+38 (000) 11-22-333'
+    'name'      => 'John Doe',
+    'age'       => 18,
+    'telephone' => '+38 (000) 11-22-333',
 ];
 
 var_dump($assocArray);

@@ -8,14 +8,15 @@
  */
 
 $array = [
-    'name' => 'John Doe',
-    'email' => 'php@email.net',
+    'name'      => 'John Doe',
+    'email'     => 'php@email.net',
     'telephone' => '88001234567',
-    'age' => 27
+    'age'       => 27,
 ];
 
 $hiddenProperties = [
-    'email', 'telephone'
+    'email',
+    'telephone',
 ];
 
 foreach ($array as $index => $value) {

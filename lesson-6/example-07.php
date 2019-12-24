@@ -11,10 +11,10 @@
  */
 
 $summary = 0;
-$number = 1;
+$number  = 1;
 
 do {
     $summary += $number++;
-} while($number <= 100);
+} while ($number <= 100);
 
 echo $summary;

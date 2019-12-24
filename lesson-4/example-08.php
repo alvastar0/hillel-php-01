@@ -9,12 +9,12 @@
  * @see https://www.php.net/manual/ru/control-structures.break.php
  */
 
-const ADMIN = 1;
+const ADMIN  = 1;
 const EDITOR = 2;
-const USER = 3;
-const GUEST = 4;
+const USER   = 3;
+const GUEST  = 4;
 
-$role = (int)$_GET['role'];
+$role = (int) $_GET['role'];
 
 switch ($role) {
     case ADMIN:

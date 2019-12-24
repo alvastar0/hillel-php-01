@@ -19,9 +19,9 @@ foreach ($pairs as $pair) {
         // Если в значении есть точка, то мы имеем дело
         // с вещественными числами.
         if (strpos($value, '.') === false) {
-            $output[$key] = (int)$value;
+            $output[$key] = (int) $value;
         } else {
-            $output[$key] = (float)$value;
+            $output[$key] = (float) $value;
         }
     } else {
         $output[$key] = $value;

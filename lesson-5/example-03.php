@@ -6,13 +6,12 @@
  * между функциями «isset» и «array_key_exists».
  */
 
-
 /** @var array $assocArray */
 $assocArray = [
-    'name' => 'John Doe',
-    'age' => 18,
+    'name'      => 'John Doe',
+    'age'       => 18,
     'telephone' => '+38 (000) 11-22-333',
-    'email' => null,
+    'email'     => null,
 ];
 
 // «isset» проверяет не только наличие ключа, но и значение этого ключа.
