@@ -27,8 +27,8 @@ $includePolicies = [
 
 // Получаем данные из $_GET и сохраняем в массив $request
 $request = [
-    'role' => $_GET['role'],
-    'include' => $_GET['include'],
+    'role' => $_GET['role'] ?? '',
+    'include' => $_GET['include'] ?? '',
 ];
 
 // Преобразуем данные запроса в строки нижнего регистра.
