@@ -16,6 +16,7 @@ $array = [
 
 $summary = 0;
 
+// Суммируем все єлементы массива
 foreach ($array as $value) {
     $summary += $value;
 }
