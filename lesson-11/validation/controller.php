@@ -2,8 +2,6 @@
 
 session_start();
 
-header('Content-Type: text/plain');
-
 if (isset($_POST['year'], $_POST['month'], $_POST['day'])) {
 
     $year = (int)$_POST['year'];
@@ -11,7 +9,7 @@ if (isset($_POST['year'], $_POST['month'], $_POST['day'])) {
     $day = (int)$_POST['day'];
 
     $requiredTime = strtotime('-18 years');
-    $userTime = strtotime("{$year}.{$month}.{$day}");
+    $userTime = strtotime("{$year}/{$month}/{$day}");
 
     if ($userTime < $requiredTime) {
         // Проходи
