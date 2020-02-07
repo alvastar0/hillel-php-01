@@ -1,14 +1,17 @@
 <?php
+declare(strict_types = 1);
 header('Content-Type: text/plain');
 
 require_once __DIR__ . '/functions/database.php';
 
-$db = get_database_connection([
-    'host' => '127.0.0.1',
-    'user' => 'root',
-    'password' => '',
-    'database' => 'application'
-]);
+$db = get_database_connection(
+    [
+        'host'     => '127.0.0.1',
+        'user'     => 'root',
+        'password' => '',
+        'database' => 'application',
+    ]
+);
 
 // --------------
 
