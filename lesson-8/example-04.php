@@ -1,6 +1,19 @@
 <?php
+declare(strict_types = 1);
 
-function repeatStr($str, $count)
+/**
+ * Передача нескольких аргументов. Важно запомнить несколько правил:
+ *
+ *  1. Передача аргументов в функцию осуществляется в том же порядке, в каком
+ *      они были объявлены в сигнатуре фунции.
+ *  2. Количество передаваемых аргументов должно совпадать с количеством объявленных.
+ *      Если большее количество аргументов допустимо передавать, то меньшее количество
+ *      при обычных условиях сгенерируют ошибку (про особые условия - в следующих файлах).
+ *
+ * @param $str
+ * @param $count
+ */
+function repeat_str($str, $count)
 {
     if (is_numeric($count)) {
         $count = (int)$count;
@@ -14,5 +27,5 @@ function repeatStr($str, $count)
 $repeat = $_GET['repeat'] ?? '';
 $count = $_GET['count'] ?? 1;
 
-repeatStr('String', 5);
-repeatStr($repeat, $count);
+repeat_str('String', 5);
+repeat_str($repeat, $count);

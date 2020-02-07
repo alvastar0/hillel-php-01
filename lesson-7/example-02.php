@@ -1,28 +1,31 @@
 <?php
+declare(strict_types = 1);
 
 // Получение значений коэффициентов квадратного уравнения
-$a = intval($_GET['a'] ?? 0);
-$b = intval($_GET['b'] ?? 0);
-$c = intval($_GET['c'] ?? 0);
+$a = (int) ($_GET['a'] ?? 0);
+$b = (int) ($_GET['b'] ?? 0);
+$c = (int) ($_GET['c'] ?? 0);
 
-// Вычисление дискриминанта
-$d = $b * $b - 4 * $a * $c;
+if ($a !== 0) {
+    // Вычисление дискриминанта
+    $d = $b * $b - 4 * $a * $c;
 
-// Массив для хранения корней
-$roots = [];
+    // Массив для хранения корней
+    $roots = [];
 
-// Вычисление корней
-if ($d > 0) {
-    $roots = [
-        (-$b - sqrt($d)) / (2 * $a),
-        (-$b + sqrt($d)) / (2 * $a)
-    ];
-} elseif ($d === 0) {
-    $roots[] = -$b / (2 * $a);
+    // Вычисление корней
+    if ($d > 0) {
+        $roots = [
+            (-$b - sqrt($d)) / (2 * $a),
+            (-$b + sqrt($d)) / (2 * $a),
+        ];
+    } elseif ($d === 0) {
+        $roots[] = -$b / (2 * $a);
+    }
+
+    // Количество корней
+    $countOfRoots = count($roots);
 }
-
-// Количество корней
-$countOfRoots = count($roots);
 
 ?>
 <!doctype html>
@@ -52,15 +55,16 @@ $countOfRoots = count($roots);
     </fieldset>
 </form>
 
-<?php if ($countOfRoots === 2) : ?>
-    <?php foreach ($roots as $index => $root): ?>
-        <strong>x<sub><?php echo $index + 1 ?></sub></strong> = <?php echo $root ?>
-    <?php endforeach; ?>
-<?php elseif ($countOfRoots === 1): ?>
-    <strong>x<sub>1</sub></strong> = <?php $roots[0] ?>
-<?php else: ?>
-    <strong>Корней нет!</strong>
+<?php if ($a !== 0): ?>
+    <?php if ($countOfRoots === 2) : ?>
+        <?php foreach ($roots as $index => $root): ?>
+            <strong>x<sub><?php echo $index + 1 ?></sub></strong> = <?php echo $root ?>
+        <?php endforeach; ?>
+    <?php elseif ($countOfRoots === 1): ?>
+        <strong>x<sub>1</sub></strong> = <?php $roots[0] ?>
+    <?php else: ?>
+        <strong>Корней нет!</strong>
+    <?php endif; ?>
 <?php endif; ?>
-
 </body>
 </html>

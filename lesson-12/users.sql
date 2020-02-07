@@ -1,3 +1,6 @@
+--
+-- Создание таблицы
+--
 CREATE TABLE `application`.`users` (
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT ,
     `email` VARCHAR(120) NOT NULL ,
