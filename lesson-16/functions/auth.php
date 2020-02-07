@@ -14,6 +14,8 @@ function is_auth(): bool
 }
 
 /**
+ * Выполняет аутентификацию.
+ *
  * @param string $login
  * @param string $password
  *
@@ -21,11 +23,29 @@ function is_auth(): bool
  */
 function auth(string $login, string $password): bool
 {
-    
+    $user = get_user_by_login($login);
+
+    if (empty($user)) {
+        return false;
+    }
+
+    if ($user['password'] !== md5($password)) {
+        return false;
+    }
+
+    $_SESSION[get_auth_session_key()] = (int)$user['id'];
+
+    return true;
 }
 
-function logout(): bool
+/**
+ * Уничтожает сессию пользователя.
+ *
+ * @return void
+ */
+function logout(): void
 {
+    unset($_SESSION[get_auth_session_key()]);
 }
 
 /**
